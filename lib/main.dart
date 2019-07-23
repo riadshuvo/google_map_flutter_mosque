@@ -85,8 +85,20 @@ class HomeState extends State<Home> {
                               myLocationEnabled: true,
                               cameraPosition: const CameraPosition(
                                   target: LatLng(0.0, 0.0)))),
-                      _zoomminusfunction(),
-                      _zoomplusfunction(),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 60.0),
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Column(
+                            children: <Widget>[
+                              new Padding(
+                                  padding: const EdgeInsets.only(top: 2.0)),
+                              _zoomminusfunction(),
+                              _zoomplusfunction(),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   )),
             ),
@@ -125,29 +137,22 @@ class HomeState extends State<Home> {
   }
 
   Widget _zoomminusfunction() {
-    return Align(
-      alignment: Alignment.bottomLeft,
-      child: IconButton(
-          icon: Icon(FontAwesomeIcons.searchMinus, color: Color(0xff6200ee)),
-          onPressed: () {
-            zoomVal--;
-            print("tapped");
-            _minus(zoomVal);
-          }),
-    );
+    return IconButton(
+        icon: Icon(FontAwesomeIcons.searchMinus, color: Color(0xff6200ee)),
+        onPressed: () {
+          zoomVal--;
+          _minus(zoomVal);
+        });
   }
 
   Widget _zoomplusfunction() {
-    return Align(
-      alignment: Alignment.bottomRight,
-      child: IconButton(
-          icon: Icon(FontAwesomeIcons.searchPlus, color: Color(0xff6200ee)),
-          onPressed: () {
-            zoomVal++;
+    return IconButton(
+        icon: Icon(FontAwesomeIcons.searchPlus, color: Color(0xff6200ee)),
+        onPressed: () {
+          zoomVal++;
 
-            _plus(zoomVal);
-          }),
-    );
+          _plus(zoomVal);
+        });
   }
 
   Future<void> _minus(double zoomVal) async {

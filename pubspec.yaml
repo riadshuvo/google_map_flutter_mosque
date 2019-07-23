@@ -27,11 +27,17 @@ dependencies:
   flutter_google_places: ^0.1.4
   location: ^1.4.1
   font_awesome_flutter: ^8.2.0
+  flutter_launcher_icons: "^0.7.0"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "images/mosque.png"
+  image_path_android: "images/mosque.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
